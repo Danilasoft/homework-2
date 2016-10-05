@@ -19,3 +19,8 @@ textarea,
 	margin-top:50px;
 	min-height:300px;
 }
+footer{
+	margin-top:20px;
+	background-color:lightgray;
+	padding:20px;
+}

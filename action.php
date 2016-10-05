@@ -1,6 +1,9 @@
 <?php
 $name = trim(htmlspecialchars($_GET["name"]));
 $message = trim(htmlspecialchars($_GET["message"]));
+if ($message == ""){
+	$message = "<Пустое сообщение....>";
+}
 date("d-M-Y H:i:s")."<p>";
 	$month = date("m");
 	switch($month){
