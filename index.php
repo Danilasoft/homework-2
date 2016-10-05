@@ -15,6 +15,11 @@
 	</div>
 	<fieldset class="messages">
 	<legend>Сообщения</legend>
+	<?php
+	if (file_exists("messages.txt")){
+		echo file_get_contents('messages.txt');
+	}
+	?>
 	</fieldset>
 	</div>
 </body>
