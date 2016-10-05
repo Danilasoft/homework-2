@@ -1,0 +1,21 @@
+body, html{
+	margin:0px;
+	padding:0px;
+	font-family: "Arial narrow";
+}
+.content{
+	margin:20px auto;
+	width:60%;
+}
+input[type="text"],
+input[type="submit"],
+textarea,
+.messages{
+	padding:5px;
+	border:2px solid gray;
+	border-radius:5px;
+}
+.messages{
+	margin-top:50px;
+	height:300px;
+}
