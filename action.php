@@ -1,10 +1,16 @@
 <?php
-$name = trim(htmlspecialchars($_GET["name"]));
-$message = trim(htmlspecialchars($_GET["message"]));
-if ($message == ""){
+if ($_POST["name"] == ""){
+	$name = "Аноним";
+}
+else{
+$name = trim(htmlspecialchars($_POST["name"]));
+}
+if (isset($_POST["message"])){
+$message = substr(trim(htmlspecialchars($_POST["message"])), 0, 500);
+}
+else{
 	$message = "<Пустое сообщение....>";
 }
-date("d-M-Y H:i:s")."<p>";
 	$month = date("m");
 	switch($month){
 		case 1:
