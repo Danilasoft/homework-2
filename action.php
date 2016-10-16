@@ -1,18 +1,21 @@
 <?php
 if ($_POST["name"] == ""){
-	header ('Location: index.php?alert=o');
+	header ('Location: index.php?alert=name');
+	exit;
+}
+elseif($_POST["message"] == ""){
+	header ('Location: index.php?alert=message');
 	exit;
 }
 else{
 $name = trim(htmlspecialchars($_POST["name"]));
 }
 $message = (!empty($_POST["message"])) ? mb_substr(trim(htmlspecialchars($_POST["message"])), 0, 500) : "<Пустое сообщение....>";
-	require('functions.php');
-	$month = date('F');
-	trMonth($month);
-	$string = array(date(d), $monthRu, date(Y), date("H:i:s"), $name, $message);
-		$fp = fopen("messages.csv", "a");
-		fputcsv($fp, $string);
-		fclose($fp);
+	require('func.php');
+	$month = trMonth(date('F'));
+	$time = date("j ").$month.date(" Y ")." в ".date("H:i:s");
+	cr_db();
+	cr_table();
+	add_sql($name, $time, $message);
 	header ('Location: index.php');
 ?>

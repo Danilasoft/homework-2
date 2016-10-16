@@ -1,7 +1,10 @@
 <?php
 	if (isset($_GET["alert"])){
-		echo "<script> alert('Не введено имя')</script>";
-	}
+		if ($_GET["alert"] == name){
+		echo "<script> alert('Не введено имя')</script>";}
+		else echo "<script> alert('Не введено сообщение')</script>";
+		}
+	
 ?>
 <!DOCTYPE html>
 <head>
@@ -31,7 +34,8 @@
 	<fieldset class="messages">
 	<legend>Сообщения</legend>
 	<?php
-		require('functions.php');
+		require('app_config.php');
+		require('func.php');
 		showMessages();
 	?>
 	</fieldset>
