@@ -59,7 +59,7 @@ mysqli_select_db($link, DATABASE_NAME) or die("No database!");
 	function showMessages(){
 		$query1 = "SELECT * FROM messages ORDER BY user_id DESC";
 		$link = mysqli_connect(DATABASE_HOST, DATABASE_LOGIN, DATABASE_PASSWORD) or die ("MySQL connect error");
-		mysqli_select_db($link, DATABASE_NAME) or die("No database!");
+		mysqli_select_db($link, DATABASE_NAME) or die("Пока записей нет!");
 		$sql = mysqli_query($link, $query1);
 		while($row = mysqli_fetch_array($sql)){
 			echo "Сообщение добавлено ".$row[2]." пользователем ".$row[1]."<br>Сообщение: ".$row[3]."<hr>";
