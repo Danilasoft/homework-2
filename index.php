@@ -1,11 +1,3 @@
-<?php
-	if (isset($_GET["alert"])){
-		if ($_GET["alert"] == name){
-		echo "<script> alert('Не введено имя')</script>";}
-		else echo "<script> alert('Не введено сообщение')</script>";
-		}
-	
-?>
 <!DOCTYPE html>
 <head>
 	<meta charset="utf-8">
@@ -24,7 +16,7 @@
 <body>
 	<div class="content">
 	<div class="send_date">
-	<form action="action.php" method="POST">
+	<form action="index.php" method="POST">
 		<input type="text" placeholder="Введите имя" name="name"><p>
 		<textarea cols="100" rows="5" placeholder="Введите текст сообщения" name="message" id="memo" onkeyup="memo_onkeydown()"></textarea><p>
 		<p id="countlabel">Осталось: 500 символов</p>
@@ -34,9 +26,8 @@
 	<fieldset class="messages">
 	<legend>Сообщения</legend>
 	<?php
-		require('app_config.php');
-		require('func.php');
-		showMessages();
+	include('show.php');
+	include('temp.php');
 	?>
 	</fieldset>
 	</div>
@@ -46,8 +37,3 @@
 	Автор: Парначев Данила
 </footer>
 </body>
-
-<?php
-
-
-?>
